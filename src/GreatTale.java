@@ -56,7 +56,7 @@ interface Readable {
 /**
  * Zde je vas ukol pro implementaci dle zadani
  */
-class Book implements Readable{
+class Book{
     String name;
     String author;
     String releaseDate;
@@ -70,35 +70,7 @@ class Book implements Readable{
         this.IBM = IBM;
         this.pages = pages;
     }
-
-
-    @Override
-    public int wordCount() {
-        String text = "";
-        for (int i = 0; i < pages.size(); i++) {
-            text += pages.get(i);
-            text += " ";
-        }
-        return text.split(" ").length;
-    }
-
-    @Override
-    public String getText() {
-        String text = null;
-        for (int i = 0; i < pages.size(); i++) {
-            text += pages.get(i);
-        }
-        return text;
-    }
-
-    @Override
-    public void read() {
-        System.out.println(name + " by " + author);
-        for (int i = 0; i < pages.size(); i++) {
-            System.out.println(i + "/" + pages.size());
-            System.out.println(pages.get(i));
-        }
-    }
+    
 
     @Override
     public boolean equals(Object o) {
